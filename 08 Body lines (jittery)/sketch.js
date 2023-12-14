@@ -99,14 +99,29 @@ function draw() {
     centerOurStuff();
 
     // draw lines
-    stroke('blue');
     strokeWeight(10);
 
     // lines left hand
+    stroke('blue');
     line(0, 0, leftHandX, leftHandY); // top left to left hand
-    line(0, height, leftHandX, leftHandY); // bottom left to left hand
+    line(0, capture.scaledHeight / 2, leftHandX, leftHandY); // middle left to left hand
+    line(0, capture.scaledHeight, leftHandX, leftHandY); // bottom left to left hand
+
+    // lines right hand
+    stroke('red');
+    line(capture.scaledWidth, 0, rightHandX, rightHandY); // top right to right hand
+    line(capture.scaledWidth, capture.scaledHeight / 2, rightHandX, rightHandY); // middle right to right hand
+    line(capture.scaledWidth, capture.scaledHeight, rightHandX, rightHandY); // bottom right to right hand
+
+    // body lines
+    stroke('yellow');
+    line(noseX, noseY, leftShoulderX, leftShoulderY); // nose to left shoulder
+    line(noseX, noseY, rightShoulderX, rightShoulderY); // nose to right shoulder
+    line(leftShoulderX, leftShoulderY, rightShoulderX, rightShoulderY); // shoulders
+
 
     // draw points
+    noStroke();
     fill('white');
     ellipse(noseX, noseY, ellipseSize, ellipseSize); // nose
     ellipse(leftShoulderX, leftShoulderY, ellipseSize, ellipseSize); // left shoulder

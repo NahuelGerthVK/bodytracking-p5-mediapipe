@@ -76,8 +76,9 @@ function draw() {
   /* TRACKING */
   // Check if landmarks are available
   if (
-    mediaPipe.handLandmarks.length > 0 &&
-    mediaPipe.faceLandmarks.length > 0
+    mediaPipe.handLandmarks[0] &&
+    mediaPipe.handLandmarks[1] &&
+    mediaPipe.faceLandmarks[0]
   ) {
 
     // index finger 1
