@@ -93,12 +93,11 @@ function draw() {
     let noseX = map(mediaPipe.faceLandmarks[0][4].x, 1, 0, 0, capture.scaledWidth);
     let noseY = map(mediaPipe.faceLandmarks[0][4].y, 0, 1, 0, capture.scaledHeight);
 
-    // // center point between index1 and index2
-    // let centerX = (index1X + index2X) / 2;
-    // let centerY = (index1Y + index2Y) / 2;
+    // distance between index1 and nose
+    let distance1 = dist(indexX, indexY, noseX, noseY);
 
-    // // distance between index1 and index2
-    // let distance = dist(index1X, index1Y, index2X, index2Y);
+    // distance between index2 and nose
+    let distance2 = dist(index2X, index2Y, noseX, noseY);
 
     push();
     centerOurStuff();
@@ -112,18 +111,16 @@ function draw() {
 
     // Draw labels
     fill('blue');
+    text("index1", indexX, indexY - 20);
+    text("index2", index2X, index2Y - 20);
+    text("nose", noseX, noseY - 20);
 
-    // // draw fingers
-    // fill('white');
-    // ellipse(index1X, index1Y, ellipseSize, ellipseSize); // index finger
-    // ellipse(index2X, index2Y, ellipseSize, ellipseSize); // thumb
-
-    // // fingers touch
-    // if (distance < 100) {
-    //   fill('blue');
-    //   textSize(200);
-    //   text("BOOM!", centerX, centerY);
-    // }
+    // nose touch
+    if (distance1 < 100 || distance2 < 100) {
+      fill('yellow');
+      textSize(200);
+      text("Tickle!", noseX, noseY);
+    }
 
     pop();
 
