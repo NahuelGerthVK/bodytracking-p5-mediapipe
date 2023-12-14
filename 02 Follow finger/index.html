@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Follow finger</title>
+
+  <!-- p5.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"></script>
+
+  <!-- import mediapipe object and make it available globally -->
+  <script type="module">
+    import { mediaPipe } from "./mediaPipe.js";
+
+    // we can use
+    // mediaPipe.predictWebcam() <- pass this your video
+    // mediaPipe.handednesses <- right/left handedness
+    // mediaPipe.landmarks <- 3d landmarks
+    // mediaPipe.worldLandmarks <- 3d landmarks in world coordinates
+
+    // make mediaPipe available everywhere
+    window.mediaPipe = mediaPipe;
+  </script>
+
+  <link rel="stylesheet" type="text/css" href="style.css" />
+
+</head>
+
+<body>
+  <main>
+  </main>
+
+  <!-- sketch -->
+  <script src="sketch.js"></script>
+</body>
+
+</html>
