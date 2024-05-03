@@ -23,8 +23,9 @@ dist-ssr
 *.sln
 *.sw?
 
-#ali custom stuff
+#all custom stuff
 .DS_Store
 *.zip
 *.ZIP
 *.zip.part
+settings.json
