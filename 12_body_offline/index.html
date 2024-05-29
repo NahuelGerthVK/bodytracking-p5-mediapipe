@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Body points (smooth)</title>
+
+    <!-- p5.js -->
+    <script src="./p5.js"></script>
+
+    <!-- import mediapipe object and make it available globally -->
+    <script type="module">
+      import { mediaPipe } from "./mediaPipe.js";
+
+      // we can use
+      // mediaPipe.predictWebcam() <- pass this your video
+      // mediaPipe.landmarks <- 3d landmarks
+      // mediaPipe.worldLandmarks <- 3d landmarks in world coordinates
+
+      // make mediaPipe available everywhere
+      window.mediaPipe = mediaPipe;
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+    <main></main>
+
+    <!-- sketch -->
+    <script src="sketch.js"></script>
+  </body>
+</html>
