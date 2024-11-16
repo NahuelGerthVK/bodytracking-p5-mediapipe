@@ -37,7 +37,7 @@ let captureEvent; // callback when webcam is ready
 let lerpRate = 0.2; // smaller = smoother, but slower to react
 let madeClone = false;
 let lerpLandmarks;
-let lastKnownLandmarks = null; // ballback points
+let lastKnownLandmarks = null; // fallback points
 
 // styling
 let ellipseSize = 20; // size of the ellipses

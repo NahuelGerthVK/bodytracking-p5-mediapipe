@@ -1,3 +1,5 @@
+// video starts on click
+
 /* - - MediaPipe Body tracking - - */
 
 /*
@@ -42,7 +44,7 @@ let letterSize = 20; // size of the letter
 /* - - Preload - - */
 function preload() {
   // Load the video
-  bgVideo = createVideo(["video/dude.mp4"]);
+  bgVideo = createVideo(["video/source.mp4"]);
 }
 
 /* - - Setup - - */
@@ -50,7 +52,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
 
   // Initialize bg video
-  bgVideo = createVideo(["video/dude.mp4"], videoLoaded); // load video and send source to mediapipe
+  bgVideo = createVideo(["video/source.mp4"], videoLoaded); // load video and send source to mediapipe
   setCameraDimensions(bgVideo); // sizing
 
   // styling
